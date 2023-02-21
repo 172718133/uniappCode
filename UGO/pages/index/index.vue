@@ -4,7 +4,7 @@
 		<view class="swiper">
 			<swiper indicator-dots circular autoplay interval="3000" duration="500" indicator-active-color="#fff">
 				<swiper-item v-for="item in swiperList" :key="item.goods_id">
-					<navigator url="../goods_detail/main" open-type="navigate" class="swiper-item">
+					<navigator :url="item.navigator_url" class="swiper-item">
 						<image :src="item.image_src" mode="widthFix"></image>
 					</navigator>
 				</swiper-item>

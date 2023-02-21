@@ -1,6 +1,6 @@
 <template>
 	<view class="goods_detail">
-		<h1>商品详情</h1>
+		<h1>商品详情---{{goods_id}}</h1>
 	</view>
 </template>
 
@@ -8,10 +8,13 @@
 	export default {
 		data() {
 			return {
+				goods_id: ''
 			}
 		},
-		onLoad() {
-
+		onLoad(option) {
+			console.log(option);
+			this.goods_id = option.goods_id
+			console.log(this.goods_id);
 		},
 		methods: {
 
