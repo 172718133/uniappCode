@@ -1,21 +1,34 @@
 <template>
 	<view class="index">
 		<!-- 轮播图 -->
-		<div class="swiper">
+		<view class="swiper">
 			<swiper indicator-dots circular autoplay interval="3000" duration="500" indicator-active-color="#fff">
 				<swiper-item v-for="item in swiperList" :key="item.goods_id">
-					<view class="swiper-item">
+					<navigator url="../goods_detail/main" open-type="navigate" class="swiper-item">
 						<image :src="item.image_src" mode="widthFix"></image>
-					</view>
+					</navigator>
 				</swiper-item>
 			</swiper>
-		</div>
+		</view>
 		<!-- 导航 -->
-		<div class="cat">
-			<div class="catitem" v-for="item in catitemList" :key="item.name">
+		<view class="cat">
+			<navigator url="../category/category" open-type="switchTab" class="catitem" v-for="item in catitemList" :key="item.name">
 				<image :src="item.image_src" mode="widthFix"></image>
-			</div>
-		</div>
+			</navigator>
+		</view>
+		<!-- 楼层 -->
+		<view class="floor">
+			<view class="floor_item" v-for="item in floorList" :key="item.floor_title.name">
+				<view class="title">
+					<image :src="item.floor_title.image_src" mode="widthFix"></image>
+				</view>
+				<view class="floor_main">
+					<view class="main" v-for="(item1, index) in item.product_list" :key="item1.image_src">
+						<image :src="item1.image_src" :mode="index === 0 ? 'widthFix' : 'scaleToFill'"></image>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -33,10 +46,12 @@
 			async getSwiper () {
 				const {data: res} = await getSwiperAPI()
 				this.swiperList = res.message
+				console.log(this.swiperList);
 			},
 			async getCatitem () {
 				const {data: res} = await getCatitemAPI()
 				this.catitemList = res.message
+				console.log(this.catitemList);
 			},
 			async getFloor () {
 				const {data: res} = await getFloorAPI()
@@ -65,12 +80,39 @@
 	}
 	.cat {
 		display: flex;
-		margin: 10px 0;
+		margin: 20rpx 0;
 		.catitem {
 			text-align: center;
 			flex: 1;
 			image {
-				width: 160rpx;
+				width: 140rpx;
+			}
+		}
+	}
+	.floor {
+		padding: 0 14rpx;
+		.floor_item {
+			.title {
+				margin: 10rpx 0;
+			}
+			.floor_main {
+					overflow: hidden;
+				  margin-bottom: 10rpx;
+				.main {
+					&:nth-child(2), &:nth-child(3) {
+						border-bottom: 8rpx solid #fff;
+					}
+					&:nth-last-child(-n+4) {
+						height: 27.3vw;
+						border-left: 8rpx solid #fff;
+					}
+					width: 33.33%;
+					float: left;
+					image {
+						width: 100%;
+						height: 100%;
+					}
+				}
 			}
 		}
 	}

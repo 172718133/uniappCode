@@ -14,4 +14,9 @@
 
 <style>
 	/*每个页面公共css */
+	page,view,text,image,swiper,swiper-item,navigator{
+	  padding: 0;
+	  margin: 0;
+	  box-sizing: border-box;
+	}
 </style>
