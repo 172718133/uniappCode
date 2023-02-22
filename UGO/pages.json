@@ -18,6 +18,9 @@
 		},
 		{
 			"path": "pages/goods_detail/main"
+		},
+		{
+			"path": "pages/goods_list/goods_list"
 		}
 	],
 	"globalStyle": {

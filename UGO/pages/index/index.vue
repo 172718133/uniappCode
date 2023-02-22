@@ -23,9 +23,9 @@
 					<image :src="item.floor_title.image_src" mode="widthFix"></image>
 				</view>
 				<view class="floor_main">
-					<view class="main" v-for="(item1, index) in item.product_list" :key="item1.image_src">
+					<navigator :url="'../goods_list/goods_list?query=' + item1.navigator_url.substr(24, 4)" class="main" v-for="(item1, index) in item.product_list" :key="item1.image_src">
 						<image :src="item1.image_src" :mode="index === 0 ? 'widthFix' : 'scaleToFill'"></image>
-					</view>
+					</navigator>
 				</view>
 			</view>
 		</view>
