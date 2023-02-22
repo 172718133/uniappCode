@@ -1,25 +1,24 @@
 <template>
 	<view class="search">
-		<navigator class="main">
+		<navigator url="../search/search" class="main">
 			<view class="text">{{text}}</view>
 		</navigator>
 	</view>
 </template>
 
 <script>
-import { type } from 'os';
 	export default {
+		props: {
+			text: {
+				type: String,
+				default: '搜索'
+			}
+		},
 		data() {
 			return {
 				
 			};
-		},
-		props: {
-			text: {
-				type: String,
-				default: ''
-			}
-		}
+		}		
 	}
 </script>
 

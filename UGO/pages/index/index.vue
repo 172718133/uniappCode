@@ -1,8 +1,6 @@
 <template>
 	<view class="index">
-		<navigator url="../search/search">
-			<Search :text="'点击搜索'"></Search>
-		</navigator>
+		<Search :text="'点击搜索'"></Search>
 		<!-- 轮播图 -->
 		<view class="swiper">
 			<swiper indicator-dots circular autoplay interval="3000" duration="500" indicator-active-color="#fff">
