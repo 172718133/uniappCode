@@ -1,5 +1,8 @@
 <template>
 	<view class="index">
+		<navigator url="../search/search">
+			<Search :text="'点击搜索'"></Search>
+		</navigator>
 		<!-- 轮播图 -->
 		<view class="swiper">
 			<swiper indicator-dots circular autoplay interval="3000" duration="500" indicator-active-color="#fff">
@@ -34,6 +37,8 @@
 
 <script>
 	import { getSwiperAPI, getCatitemAPI, getFloorAPI } from '@/api/index.js'
+	
+	import Search from '@/components/Search/search.vue'
 	export default {
 		data() {
 			return {
@@ -41,6 +46,9 @@
 				catitemList: {},
 				floorList: {}
 			}
+		},
+		components: {
+			Search
 		},
 		methods: {
 			async getSwiper () {
@@ -69,6 +77,7 @@
 
 <style lang="less" scoped>
 	.swiper swiper {
+		margin-top: 80rpx;
 		width: 100%;
 		height: 340rpx;
 		.swiper-item {

@@ -21,6 +21,9 @@
 		},
 		{
 			"path": "pages/goods_list/goods_list"
+		},
+		{
+			"path": "pages/search/search"
 		}
 	],
 	"globalStyle": {
