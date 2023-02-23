@@ -26,3 +26,15 @@ export const getFloorAPI = () => {
 		url: '/home/floordata'
 	})
 }
+
+/**
+ * 搜索列表
+ */
+export const getSearchListAPI = (query) => {
+	return request({
+		url: '/goods/qsearch',
+		data: {
+			query
+		}
+	})
+}
