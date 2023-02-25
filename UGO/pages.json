@@ -21,7 +21,7 @@
 		{
 			"path": "pages/goods_list/goods_list"
 		}
-	],
+  ],
 	"globalStyle": {
 		// "navigationBarTextStyle": "white",
 		// "navigationBarTitleText": "uni-app",

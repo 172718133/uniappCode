@@ -25,7 +25,7 @@
 <style lang="scss">
 	.search {
 		height: 80rpx;
-		background-color: #5cdedb;
+		background-color: $uni-color-main;
 		padding: 10rpx;
 		box-sizing: border-box;
 		position: fixed;

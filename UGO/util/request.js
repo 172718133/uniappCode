@@ -1,5 +1,5 @@
 // 定义接口根路径
-const BASE_URL = 'https://api-hmugo-web.itheima.net/api/public/v1'
+const BASE_URL = 'http://api-hmugo-web.itheima.net/api/public/v1'
 
 // 封装request请求方法
 export const request = (option) => {

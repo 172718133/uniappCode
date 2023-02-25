@@ -12,7 +12,8 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	@import url('./uni.scss');
 	/*每个页面公共css */
 	page,view,text,image,swiper,swiper-item,navigator{
 	  padding: 0;
