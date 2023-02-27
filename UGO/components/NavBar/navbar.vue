@@ -24,6 +24,7 @@
 		methods: {
 			navClick (index) {
 				this.currentIndex = index
+				this.$emit('tabchange', index)
 			}
 		}
 	}

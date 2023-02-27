@@ -69,6 +69,11 @@
 			this.getSwiper()
 			this.getCatitem()
 			this.getFloor()
+		},
+		onPullDownRefresh() {
+			this.getCatitem()
+			this.getCatitem()
+			this.getFloor()
 		}
 	}
 </script>

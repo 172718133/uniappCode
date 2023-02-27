@@ -1,28 +1,15 @@
 <template>
 	<view class="goods_list">
 		<Search :text="'点击搜索'"></Search>
-		<NavBar class="navbar" :navList="['综合', '销量', '价格']"></NavBar>
-		<view class="list">
-			<navigator :url="'../goods_detail/main?goods_id=' + item.goods_id" class="list_item" v-for="item in goodsList" :key="item.goods_id">
-				<view class="image">
-					<image :src="item.goods_small_logo ? item.goods_small_logo : 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.yxke.com%2Fstyle%2Fimages%2Fnopic.jpg&refer=http%3A%2F%2Fwww.yxke.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1642316385&t=412e4049f4c810e6de0cb4af644b341b'" mode="widthFix"></image>
-				</view>
-				<view class="goods_info">
-					<view class="title">
-						{{item.goods_name}}
-					</view>
-					<view class="price">
-						￥{{item.goods_price}}
-					</view>
-				</view>
-			</navigator>
-		</view>
+		<NavBar class="navbar" :navList="['综合', '销量', '价格']" @tabchange="tabChange"></NavBar>
+		<GoodsItem :goodsList="goodsList"></GoodsItem>
 	</view>
 </template>
 
 <script>
 	import Search from '@/components/Search/search.vue'
 	import NavBar from '@/components/NavBar/navbar.vue'
+	import GoodsItem from '@/components/Goods_item/goods_item.vue'
 	
 	import { getGoodsListAPI } from '@/api/index.js'
 	export default {
@@ -34,24 +21,74 @@
 					pagenum: 1,
 					pagesize: 10
 				},
-				goodsList: []
+				goodsList: [],
+				totalPage: 0
 			}
 		},
 		components: {
 			Search,
-			NavBar
+			NavBar,
+			GoodsItem
+		},
+		methods: {
+			// 获取商品列表信息
+			async getGoodsList() {
+				const { data: res } = await getGoodsListAPI(this.params)
+				// 总页码，总条数/每一页的条数。Math.ceil为向上取整（3.9取4）
+				this.totalPage = Math.ceil(res.message.total / this.params.pagesize)
+				this.goodsList = [...this.goodsList, ...res.message.goods]
+				console.log(this.goodsList);
+			},
+			// 监听navbar的切换
+			tabChange (val) {
+				if (val === 0) {
+					this.goodsList = this.goodsList.sort((a, b) => {
+						return (b.goods_id-a.goods_id)
+					})
+				} else if (val === 1) {
+					console.log('1');
+					this.goodsList = this.goodsList.sort((a, b) => {
+						return (a.add_time-b.add_time)
+					})
+				} else if (val === 2) {
+					console.log('2');
+					this.goodsList = this.goodsList.sort((a, b) => {
+						return (a.goods_price-b.goods_price)
+					})
+				}
+				
+			},
+			// 监听加载下一页
+			loadMore () {
+				console.log('1');
+				// 页码加1
+				this.params.pagenum++
+				this.getGoodsList()
+			}
 		},
 		onLoad(option) {
 			this.params.query = option.query
 			this.params.cid = option.cid
-			console.log(this.params);
 			this.getGoodsList()
 		},
-		methods: {
-			async getGoodsList() {
-				const { data: res } = await getGoodsListAPI(this.params)
-				this.goodsList = res.message.goods
-				console.log(this.goodsList);
+		// 监听下拉刷新
+		onPullDownRefresh() {
+			// 重置页码为1
+			this.params.pagenum = 1
+			// 重置数组为空
+			this.goodsList = []
+			this.getGoodsList()
+		},
+		// 监听上拉加载
+		onReachBottom() {
+			// 判断如果当前的页码比总页码大，就不请求下一页数据了，提示没有更多
+			if (this.params.pagenum >= this.totalPage) {
+				uni.showToast({
+					title: '没有更多了哦~',
+					icon: 'none'
+				})
+			} else {
+				this.loadMore()
 			}
 		}
 	}
@@ -61,43 +98,6 @@
 	.goods_list {
 		.navbar {
 			margin-top: 80rpx;
-		}
-		.list {
-			.list_item {
-				display: flex;
-				padding: 20rpx;
-				border-bottom: 2rpx solid #e1e1e1;
-				.image {
-					// background-color: aquamarine;
-					max-height: 200rpx;
-					// width: 100rpx;
-					flex: 2;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					image {
-						width: 80%
-					}
-				}
-				.goods_info {
-					flex: 4;
-					margin-left: 20rpx;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-around;
-					.title {
-						font-size: 26rpx;
-						display: -webkit-box;
-						-webkit-line-clamp: 2;
-						-webkit-box-orient: vertical;
-						overflow: hidden;
-					}
-					.price {
-						color: red;
-						font-weight: bold;
-					}
-				}
-			}
 		}
 	}
 </style>
