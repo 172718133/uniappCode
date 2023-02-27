@@ -3,6 +3,9 @@
 		<Search :text="'点击搜索'"></Search>
 		<NavBar class="navbar" :navList="['综合', '销量', '价格']" @tabchange="tabChange"></NavBar>
 		<GoodsItem :goodsList="goodsList"></GoodsItem>
+		<view class="toTop" v-show="showTop" @click="toTop">
+			<image src="../../static/imgs/top.png" mode="widthFix"></image>
+		</view>
 	</view>
 </template>
 
@@ -22,7 +25,8 @@
 					pagesize: 10
 				},
 				goodsList: [],
-				totalPage: 0
+				totalPage: 0,
+				showTop: false
 			}
 		},
 		components: {
@@ -64,6 +68,13 @@
 				// 页码加1
 				this.params.pagenum++
 				this.getGoodsList()
+			},
+			// 返回顶部图标点击事件
+			toTop () {
+				uni.pageScrollTo({
+					scrollTop: 0,
+					duration: 300
+				})
 			}
 		},
 		onLoad(option) {
@@ -90,6 +101,11 @@
 			} else {
 				this.loadMore()
 			}
+		},
+		// 监听页面滚动
+		onPageScroll (position) {
+			// 页面上滑的距离大于500，showTop变为true
+			this.showTop = position.scrollTop > 500
 		}
 	}
 </script>
@@ -98,6 +114,16 @@
 	.goods_list {
 		.navbar {
 			margin-top: 80rpx;
+		}
+		.toTop {
+			width: 120rpx;
+			height: 120rpx;
+			position: fixed;
+			bottom: 50rpx;
+			right: 30rpx;
+			image {
+				width: 100%;
+			}
 		}
 	}
 </style>
