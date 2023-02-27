@@ -52,17 +52,14 @@
 			async getSwiper () {
 				const {data: res} = await getSwiperAPI()
 				this.swiperList = res.message
-				console.log(this.swiperList);
 			},
 			async getCatitem () {
 				const {data: res} = await getCatitemAPI()
 				this.catitemList = res.message
-				console.log(this.catitemList);
 			},
 			async getFloor () {
 				const {data: res} = await getFloorAPI()
 				this.floorList = res.message
-				console.log(this.floorList);
 			}
 		},
 		onLoad() {

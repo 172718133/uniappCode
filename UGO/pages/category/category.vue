@@ -40,7 +40,7 @@
 				rightList: [],
 				currentIndex: 0,
 				cateList: [],
-				scrolltop: '0'
+				scrolltop: 0
 			}
 		},
 		components: {
@@ -71,12 +71,12 @@
 			},
 			// 左侧菜单栏点击事件
 			leftClick(index) {
+				this.scrolltop = -1
 				this.currentIndex = index
 				// this.leftList = this.cateList.map((item) => {
 				// 		return item.cat_name
 				// 	})
 				this.rightList = this.cateList.data[index].children
-				this.scrolltop = '0'
 			}
 		}
 	}
@@ -128,7 +128,7 @@
 								background-color: #5cdedb;
 							}
 							.item_name {
-								font-size: 28rpx;
+								font-size: 26rpx;
 								margin-top: 10rpx;
 							}
 						}

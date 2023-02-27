@@ -25,7 +25,7 @@
 			"path": "pages/goods_list/goods_list",
 			"style": {
 				"enablePullDownRefresh": true,
-				"onReachBottomDistance": 0
+				"onReachBottomDistance": 10
 			}
 		}
   ],

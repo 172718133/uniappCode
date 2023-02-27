@@ -50,12 +50,10 @@
 						return (b.goods_id-a.goods_id)
 					})
 				} else if (val === 1) {
-					console.log('1');
 					this.goodsList = this.goodsList.sort((a, b) => {
 						return (a.add_time-b.add_time)
 					})
 				} else if (val === 2) {
-					console.log('2');
 					this.goodsList = this.goodsList.sort((a, b) => {
 						return (a.goods_price-b.goods_price)
 					})
@@ -64,7 +62,6 @@
 			},
 			// 监听加载下一页
 			loadMore () {
-				console.log('1');
 				// 页码加1
 				this.params.pagenum++
 				this.getGoodsList()
@@ -110,7 +107,7 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 	.goods_list {
 		.navbar {
 			margin-top: 80rpx;
