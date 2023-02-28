@@ -63,3 +63,16 @@ export const getGoodsListAPI = ({query, cid, pagenum, pagesize}) => {
 		}
 	})
 }
+
+/**
+ * 获取商品详情信息
+ * goods_id 商品id
+ */
+export const getGoodsDetailAPI = (goods_id) => {
+	return request({
+		url: '/goods/detail',
+		data: {
+			goods_id
+		}
+	})
+}
