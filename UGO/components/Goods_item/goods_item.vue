@@ -52,7 +52,9 @@
 					justify-content: center;
 					align-items: center;
 					image {
-						width: 80%
+						width: 80%;
+						max-width: 180rpx;
+						min-width: 100rpx;
 					}
 				}
 				.goods_info {

@@ -182,6 +182,7 @@
 						color: #999;
 					}
 					.attrs_con {
+						margin-left: 20rpx;
 						flex: 5;
 					}
 				}
