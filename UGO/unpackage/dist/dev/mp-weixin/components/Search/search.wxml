@@ -1,0 +1,1 @@
+<view class="search"><navigator class="main" url="../search/search"><view class="text">{{text}}</view></navigator></view>

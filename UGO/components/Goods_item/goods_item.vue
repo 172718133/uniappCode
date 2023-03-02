@@ -7,7 +7,7 @@
 				</view>
 				<view class="goods_info">
 					<view class="title">
-						{{item.goods_name}}tab
+						{{item.goods_name}}
 					</view>
 					<view class="price">
 						￥{{item.goods_price}}
@@ -28,7 +28,7 @@
 		props: {
 			goodsList: {
 				type: Array,
-				default: {}
+				default: []
 			}
 		},
 		methods: {

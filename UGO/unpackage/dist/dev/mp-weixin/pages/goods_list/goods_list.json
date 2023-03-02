@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "商品列表",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 10,
+  "usingComponents": {
+    "search": "/components/Search/search",
+    "nav-bar": "/components/NavBar/navbar",
+    "goods-item": "/components/Goods_item/goods_item"
+  }
+}

@@ -1,0 +1,36 @@
+.order.data-v-5b3e411c {
+  padding: 30rpx 20rpx;
+  margin: 0 10rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+.order .title.data-v-5b3e411c {
+  display: flex;
+  justify-content: space-between;
+}
+.order .title .left.data-v-5b3e411c {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.order .title .right.data-v-5b3e411c {
+  font-size: 26rpx;
+  color: #999;
+}
+.order .content.data-v-5b3e411c {
+  display: flex;
+  text-align: center;
+  padding-top: 40rpx;
+}
+.order .content > view.data-v-5b3e411c {
+  flex: 1;
+}
+.order .content .num.data-v-5b3e411c {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.order .content .text.data-v-5b3e411c {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+

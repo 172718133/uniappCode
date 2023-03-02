@@ -1,0 +1,1 @@
+<view class="goods-bottom data-v-2bce51e4"><view class="goods-carts data-v-2bce51e4"><uni-goods-nav vue-id="4dfc6ba2-1" options="{{options}}" fill="{{true}}" button-group="{{buttonGroup}}" data-event-opts="{{[['^click',[['onClick']]],['^buttonClick',[['buttonClick']]]]}}" bind:click="__e" bind:buttonClick="__e" class="data-v-2bce51e4" bind:__l="__l"></uni-goods-nav></view></view>

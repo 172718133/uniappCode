@@ -1,0 +1,1 @@
+<view class="cart data-v-0f00adf4"><view class="chooseAdd data-v-0f00adf4"><button type="default" data-event-opts="{{[['tap',[['chooseAdd',['$event']]]]]}}" bindtap="__e" class="data-v-0f00adf4">选择收货地址</button></view></view>

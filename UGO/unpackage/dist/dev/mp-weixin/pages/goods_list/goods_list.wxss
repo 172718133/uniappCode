@@ -1,0 +1,14 @@
+.goods_list .navbar.data-v-7bccf8e6 {
+  margin-top: 80rpx;
+}
+.goods_list .toTop.data-v-7bccf8e6 {
+  width: 120rpx;
+  height: 120rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+}
+.goods_list .toTop image.data-v-7bccf8e6 {
+  width: 100%;
+}
+

@@ -1,0 +1,105 @@
+.goods_detail.data-v-72d8bb25 {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding-bottom: 120rpx;
+}
+.goods_detail .swiper.data-v-72d8bb25 {
+  width: 100%;
+  height: 500rpx;
+}
+.goods_detail .swiper swiper-item .swiper-item.data-v-72d8bb25 {
+  text-align: center;
+}
+.goods_detail .swiper swiper-item .swiper-item image.data-v-72d8bb25 {
+  height: 500rpx;
+}
+.goods_detail .goods_info .info.data-v-72d8bb25 {
+  margin: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.goods_detail .goods_info .info .price.data-v-72d8bb25 {
+  line-height: 120rpx;
+  padding-left: 30rpx;
+  color: #fff;
+  background: linear-gradient(90deg, #dd25fc, #9a26fc) !important;
+}
+.goods_detail .goods_info .info .price .span.data-v-72d8bb25 {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+.goods_detail .goods_info .info .title.data-v-72d8bb25 {
+  margin: 10rpx 0;
+  padding: 20rpx;
+  display: flex;
+}
+.goods_detail .goods_info .info .title .name.data-v-72d8bb25 {
+  flex: 5;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.goods_detail .goods_info .info .title .collect.data-v-72d8bb25 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+.goods_detail .goods_info .info .title .collect ._span.data-v-72d8bb25 {
+  margin-top: 2rpx;
+}
+.goods_detail .goods_info .attrs.data-v-72d8bb25 {
+  background-color: #fff;
+  font-size: 28rpx;
+  margin: 20rpx 20rpx 0;
+  border-radius: 20rpx;
+}
+.goods_detail .goods_info .attrs .attrs_title.data-v-72d8bb25 {
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+}
+.goods_detail .goods_info .attrs .main.data-v-72d8bb25 {
+  padding: 20rpx;
+  display: flex;
+  word-break: break-all;
+}
+.goods_detail .goods_info .attrs .main .attrs_name.data-v-72d8bb25 {
+  flex: 3;
+  color: #999;
+}
+.goods_detail .goods_info .attrs .main .attrs_con.data-v-72d8bb25 {
+  margin-left: 20rpx;
+  flex: 5;
+}
+.goods_detail .goods_info .evaluation.data-v-72d8bb25 {
+  padding: 20rpx;
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 20rpx;
+}
+.goods_detail .goods_info .evaluation .eva_title.data-v-72d8bb25 {
+  display: flex;
+  justify-content: space-between;
+}
+.goods_detail .goods_info .evaluation .eva_title .left.data-v-72d8bb25 {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.goods_detail .goods_info .evaluation .eva_title .right.data-v-72d8bb25 {
+  font-size: 30rpx;
+  color: #999;
+}
+.goods_detail .goods_info .evaluation .eva_main.data-v-72d8bb25 {
+  text-align: center;
+  margin: 60rpx 0 30rpx 0;
+}
+.goods_detail .goods_info .intro .intro_title.data-v-72d8bb25 {
+  text-align: center;
+  margin: 40rpx 0 40rpx 0;
+  color: #999;
+}
+

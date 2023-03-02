@@ -45,14 +45,20 @@
 		},
 		methods: {
 			onClick(e) {
-				uni.showToast({
-					title: `点击${e.content.text}`,
-					icon: 'none'
-				})
+				if (e.index === 0) {
+					
+				} else if (e.index === 1) {
+					
+				} else if (e.index === 2) {
+					uni.switchTab({
+						url: '/pages/cart/cart'
+					})
+				}
 			},
 			buttonClick(e) {
-				console.log(e)
-				this.options[2].info++
+				if (e.index === 0) {
+					this.$emit('addCart')
+				}
 			}
 		}
 	}

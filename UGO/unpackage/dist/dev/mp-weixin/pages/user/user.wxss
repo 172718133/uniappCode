@@ -1,0 +1,56 @@
+.user.data-v-80842834 {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+}
+.user .info.data-v-80842834 {
+  height: 400rpx;
+  background: url(/static/imgs/bg.png) no-repeat scroll 0 0;
+  background-size: 100%;
+  display: flex;
+  padding: 40rpx 30rpx;
+}
+.user .info .info_image.data-v-80842834 {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+.user .info .info_image image.data-v-80842834 {
+  width: 100%;
+}
+.user .info .info_main.data-v-80842834 {
+  margin-top: 50rpx;
+}
+.user .info .info_main .main_name.data-v-80842834 {
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.user .info .info_main .main_other.data-v-80842834 {
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.user .info .info_main .main_other .focus.data-v-80842834 {
+  margin-right: 20rpx;
+}
+.user .collect.data-v-80842834 {
+  display: flex;
+  background: linear-gradient(to bottom, #fff, #f2f2f2);
+  border-radius: 20rpx 20rpx 0 0;
+  margin-top: -100rpx;
+}
+.user .collect > view.data-v-80842834 {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.user .collect .text.data-v-80842834 {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.user .login.data-v-80842834 {
+  padding: 200rpx 50rpx 0;
+}
+

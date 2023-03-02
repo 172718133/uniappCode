@@ -1,0 +1,36 @@
+.list .list_item.data-v-286b4224 {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+}
+.list .list_item .image.data-v-286b4224 {
+  max-height: 200rpx;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list .list_item .image image.data-v-286b4224 {
+  width: 80%;
+  max-width: 180rpx;
+  min-width: 100rpx;
+}
+.list .list_item .goods_info.data-v-286b4224 {
+  flex: 4;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.list .list_item .goods_info .title.data-v-286b4224 {
+  font-size: 26rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.list .list_item .goods_info .price.data-v-286b4224 {
+  color: red;
+  font-weight: bold;
+}
+

@@ -19,8 +19,8 @@
 						{{goodsInfo.goods_name}}
 					</view>
 					<view class="collect" @click="collect">
-						<uni-icons type="star" size="24"></uni-icons>
-						<span>收藏</span>
+						<uni-icons :type="isCollect?'star-filled':'star'" size="24"></uni-icons>
+						<span>{{isCollect?'已收藏':'收藏'}}</span>
 					</view>
 				</view>
 			</view>
@@ -58,7 +58,7 @@
 				<view class="intro_main" v-html="goodsInfo.goods_introduce"></view>
 			</view>
 		</view>
-		<GoodsBottom></GoodsBottom>
+		<GoodsBottom @addCart="addCart"></GoodsBottom>
 	</view>
 </template>
 
@@ -69,8 +69,9 @@
 		data() {
 			return {
 				goods_id: '',
-				goodsInfo: [],
-				previewList: []
+				goodsInfo: {},
+				previewList: [],
+				isCollect: false
 			}
 		},
 		components: {
@@ -87,7 +88,8 @@
 				this.previewList = res.message.pics.map((item) => {
 					return item.pics_big_url
 				})
-				console.log(this.goodsInfo);
+				let collect = uni.getStorageSync('collect')
+				this.isCollect = collect.some(v => v.goods_id === this.goodsInfo.goods_id)
 			},
 			// 图片预览
 			previewImg () {
@@ -99,7 +101,43 @@
 			},
 			// 收藏按钮点击事件
 			collect () {
-				console.log('点击了收藏');
+				let collect = uni.getStorageSync('collect') || []
+				let index = collect.findIndex(v=>v.goods_id === this.goodsInfo.goods_id)
+				if (index !== -1) {
+					collect.splice(index, 1)
+					this.isCollect = false
+					uni.showToast({
+						title: '取消成功',
+						icon: 'none',
+						mask: true
+					})
+				} else {
+					collect.push(this.goodsInfo)
+					this.isCollect = true
+					uni.showToast({
+						title: '收藏成功',
+						icon: 'none',
+						mask: true
+					})
+				}
+				uni.setStorageSync('collect', collect)
+			},
+			// 加入购物车
+			addCart () {
+				let cart = uni.getStorageSync('carts') || []
+				let index = cart.findIndex(v=>v.goods_id === this.goodsInfo.goods_id)
+				if (index == -1) {
+					this.goodsInfo.num = 1
+					this.goodsInfo.checked = true
+					cart.push(this.goodsInfo)
+				} else {
+					cart[index].num++
+				}
+				uni.setStorageSync('carts', cart)
+				uni.showToast({
+					title: '加入购物车成功',
+					icon: 'none'
+				})
 			}
 		}
 	}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收藏",
+  "usingComponents": {
+    "goods-item": "/components/Goods_item/goods_item"
+  }
+}
