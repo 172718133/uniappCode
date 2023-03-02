@@ -136,7 +136,8 @@
 				uni.setStorageSync('carts', cart)
 				uni.showToast({
 					title: '加入购物车成功',
-					icon: 'none'
+					icon: 'none',
+					mask: true
 				})
 			}
 		}
