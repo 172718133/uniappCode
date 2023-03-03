@@ -9,7 +9,7 @@
 				</checkbox-group>
 			</view>
 			<navigator :url="'../goods_detail/main?goods_id=' + item.goods_id" class="item_img">
-				<image :src="item.goods_big_logo" mode="widthFix"></image>
+				<image :src="item.goods_big_logo" lazy-load mode="widthFix"></image>
 			</navigator>
 			<view class="item_info">
 				<view class="info_title">

@@ -10,7 +10,7 @@
 			合计:￥
 			<span>{{totalPrice}}</span>
 		</view>
-		<view class="totalNum">
+		<view class="totalNum" @click="toPay">
 			结算({{totalNum}})
 		</view>
 	</view>
@@ -42,6 +42,10 @@
 				// 定义一个参数，为全选按钮勾选状态的相反值
 				let val = !this.allCheck
 				this.$emit('payCheckChange', val)
+			},
+			// 结算按钮点击事件
+			toPay () {
+				console.log('支付');
 			}
 		}
 	}
