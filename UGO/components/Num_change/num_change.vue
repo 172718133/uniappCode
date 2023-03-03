@@ -1,18 +1,19 @@
 <template>
 	<view class="num_change">
-		<view class="less">
+		<view class="less" @click="less">
 			-
 		</view>
 		<view class="num">
 			{{num}}
 		</view>
-		<view class="add">
+		<view class="add" @click="add">
 			+
 		</view>
 	</view>
 </template>
 
 <script>
+	import bus from '../../util/eventBus.js'
 	export default {
 		data() {
 			return {
@@ -23,10 +24,25 @@
 			num: {
 				type: Number,
 				default: 0
+			},
+			index: {
+				type: Number,
+				default: 0
 			}
 		},
 		methods: {
-			
+			less() {
+				let num = this.num
+				let obj = { index: this.index, num: --num
+				}
+				bus.$emit('numLess', obj)
+			},
+			add() {
+				let num = this.num
+				let obj = { index: this.index, num: ++num
+				}
+				bus.$emit('numAdd', obj)
+			}
 		}
 	}
 </script>

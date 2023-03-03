@@ -1,8 +1,8 @@
 <template>
 	<view class="cart_main">
-		<view class="cart_item" v-for="item in cartList" :key="item.goods_id">
+		<view class="cart_item" v-for="(item, index) in cartList" :key="item.goods_id">
 			<view class="item_check">
-				<checkbox-group name="">
+				<checkbox-group name="" @change="chcekChange" :data-index="index">
 					<label>
 						<checkbox :checked="item.checked" color="#5cdedb" style="transform:scale(0.8)"/>
 					</label>
@@ -19,7 +19,7 @@
 					<view class="item_price">
 						￥{{item.goods_price}}
 					</view>
-					<NumChange :num="item.num"></NumChange>
+					<NumChange :num="item.num" :index="index"></NumChange>
 				</view>
 			</view>
 		</view>
@@ -44,7 +44,12 @@
 			}
 		},
 		methods: {
-			
+			chcekChange (e) {
+				// 复选框data-了索引值
+				let index = e.currentTarget.dataset.index
+				// 将索引值数据共享给父组件
+				this.$emit('itemCheckChange', index)
+			}
 		}
 	}
 </script>
@@ -82,6 +87,9 @@
 					justify-content: space-around;
 					.info_title {
 						font-size: 26rpx;
+						white-space: normal;
+						word-break: break-all;
+						word-wrap: break-word;
 						display: -webkit-box;
 						-webkit-line-clamp: 2;
 						-webkit-box-orient: vertical;

@@ -41,7 +41,6 @@
 				// 总页码，总条数/每一页的条数。Math.ceil为向上取整（3.9取4）
 				this.totalPage = Math.ceil(res.message.total / this.params.pagesize)
 				this.goodsList = [...this.goodsList, ...res.message.goods]
-				console.log(this.goodsList);
 			},
 			// 监听navbar的切换
 			tabChange (val) {

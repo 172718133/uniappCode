@@ -65,6 +65,9 @@
 					justify-content: space-around;
 					.title {
 						font-size: 26rpx;
+						white-space: normal;
+						word-break: break-all;
+						word-wrap: break-word;
 						display: -webkit-box;
 						-webkit-line-clamp: 2;
 						-webkit-box-orient: vertical;

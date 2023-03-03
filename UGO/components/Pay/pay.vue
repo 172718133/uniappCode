@@ -1,6 +1,6 @@
 <template>
 	<view class="pay">
-		<checkbox-group name="" class="checkbox">
+		<checkbox-group name="" class="checkbox" @change="checkChange">
 			<label>
 				<checkbox :checked="allCheck" color="#5cdedb" style="transform:scale(0.8)" />
 				<text>全选</text>
@@ -38,7 +38,11 @@
 			}
 		},
 		methods: {
-			
+			checkChange () {
+				// 定义一个参数，为全选按钮勾选状态的相反值
+				let val = !this.allCheck
+				this.$emit('payCheckChange', val)
+			}
 		}
 	}
 </script>
@@ -55,7 +59,7 @@
 			left: 0;
 			right: 0;
 			.checkbox {
-				flex: 1.6;
+				flex: 2;
 				display: flex;
 				justify-content: center;
 				align-items: center;
