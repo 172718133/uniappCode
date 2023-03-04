@@ -59,7 +59,12 @@
 			padding: 20rpx;
 			background-color: #fff;
 			position: fixed;
+			/* #ifdef H5 */
 			bottom: 92rpx;
+			/* #endif */
+			/* #ifdef APP-PLUS || MP-WEIXIN */
+			bottom: 0;
+			/* #endif */
 			left: 0;
 			right: 0;
 			.checkbox {

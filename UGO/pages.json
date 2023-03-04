@@ -52,17 +52,24 @@
 			}
 		}
   ],
+	// #ifdef APP-PlUS || MP-WEIXIN
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		// "navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#F8F8F8"
-		// 去掉顶部导航栏
-		// "navigationStyle": "custom",
-		// "app-plus": {
-		// 	"titleNView": false				
-		// }
 	},
+	// #endif
+	
+	// #ifdef H5
+	"globalStyle": {
+		// 去掉顶部导航栏
+		"navigationStyle": "custom",
+		"app-plus": {
+			"titleNView": false				
+		}
+	},
+	// #endif
 	"tabBar": {
 		"selectedColor": "#5cdedb",
 		"list": [

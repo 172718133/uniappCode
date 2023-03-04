@@ -122,7 +122,12 @@
 	.cart {
 		width: 100vw;
 		overflow: hidden;
+		/* #ifdef H5 */
 		min-height: calc(100vh - 110rpx);
+		/* #endif */
+		/* #ifdef APP-PLUS || MP-WEIXIN */
+		min-height: 100vh;
+		/* #endif */
 		background-color: #f2f2f2;
 		padding-bottom: 110rpx;
 		.chooseAdd {}

@@ -1,0 +1,45 @@
+.pay.data-v-beee8a94 {
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.pay .checkbox.data-v-beee8a94 {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pay .checkbox text.data-v-beee8a94 {
+  font-size: 26rpx;
+  color: #999;
+}
+.pay .totalPrice.data-v-beee8a94 {
+  flex: 5;
+  text-align: right;
+  margin-right: 20rpx;
+  font-size: 28rpx;
+}
+.pay .totalPrice ._span.data-v-beee8a94 {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: red;
+}
+.pay .totalNum.data-v-beee8a94 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50rpx;
+  background: linear-gradient(to right, #6afffb, #5cdedb);
+  flex: 2.6;
+}
+

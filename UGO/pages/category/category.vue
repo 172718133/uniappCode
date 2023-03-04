@@ -86,7 +86,12 @@
 	.category {
 		padding-top: 80rpx;
 		.cate_container {
+			/* #ifdef APP-PLUS || MP-WEIXIN */
+			height: calc( 100vh - 80rpx );
+			/* #endif */
+			/* #ifdef H5 */
 			height: calc( 100vh - 180rpx );
+			/* #endif */
 			display: flex;
 			.left_menu {
 				flex: 2;

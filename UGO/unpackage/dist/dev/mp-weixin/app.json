@@ -10,10 +10,6 @@
     "pages/goods_list/goods_list"
   ],
   "subPackages": [],
-  "window": {
-    "backgroundColor": "#F8F8F8",
-    "navigationStyle": "custom"
-  },
   "tabBar": {
     "selectedColor": "#5cdedb",
     "list": [

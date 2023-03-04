@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "num-change": "/components/Num_change/num_change"
+  }
+}

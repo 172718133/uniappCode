@@ -1,0 +1,8 @@
+.cart.data-v-0f00adf4 {
+  width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  padding-bottom: 110rpx;
+}
+

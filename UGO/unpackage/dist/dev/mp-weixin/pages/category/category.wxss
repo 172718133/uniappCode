@@ -28,7 +28,7 @@
   padding-top: 80rpx;
 }
 .category .cate_container.data-v-682a9774 {
-  height: calc( 100vh - 180rpx);
+  height: calc( 100vh - 80rpx);
   display: flex;
 }
 .category .cate_container .left_menu.data-v-682a9774 {
