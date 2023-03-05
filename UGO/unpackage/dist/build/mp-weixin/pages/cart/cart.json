@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "uni-popup-dialog": "/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog",
+    "goods-item": "/components/Goods_item/goods_item",
+    "num-change": "/components/Num_change/num_change",
+    "cart-item": "/components/Cart_item/cart_item",
+    "pay": "/components/Pay/pay"
+  }
+}

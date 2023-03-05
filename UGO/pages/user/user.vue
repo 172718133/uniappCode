@@ -45,8 +45,9 @@
 					</view>
 				</view>
 			</view>
-			<MyItem :list="list"></MyItem>
+			<MyItem :list="list" :isFlex="true"></MyItem>
 			<MyItem :list="list1"></MyItem>
+			<MyItem :list="list2" class="other"></MyItem>
 		</view>
 		<view class="login" v-else>
 			<button class="button" type="primary" @click="login">立即登录</button>
@@ -68,23 +69,28 @@
 					context: [
 						{
 							icon: 'wallet',
-							text: '待付款'
+							text: '待付款',
+							url: '../../pages/order/order'
 						},
 						{
 							icon: 'gift',
-							text: '待发货'
+							text: '待发货',
+							url: '../../pages/order/order'
 						},
 						{
 							icon: 'folder-add',
-							text: '待收货'
+							text: '待收货',
+							url: '../../pages/order/order'
 						},
 						{
 							icon: 'chatbubble',
-							text: '待评价'
+							text: '待评价',
+							url: '../../pages/order/order'
 						},
 						{
 							icon: 'help',
-							text: '退款/售后'
+							text: '退款/售后',
+							url: '../../pages/order/order'
 						}
 					]
 				},
@@ -107,6 +113,44 @@
 						{
 							num: '3542',
 							text: '积分'
+						}
+					]
+				},
+				list2: {
+					title_left: '其他功能',
+					context: [
+						{
+							icon: 'chat',
+							text: '联系客服'
+						},
+						{
+							icon: 'vip',
+							text: '购买优惠卡'
+						},
+						{
+							icon: 'location',
+							text: '收货地址',
+							url: '../../pages/address/address'
+						},
+						{
+							icon: 'email',
+							text: '发票报销'
+						},
+						{
+							icon: 'compose',
+							text: '常见问题'
+						},
+						{
+							icon: 'paperplane',
+							text: '到货提醒'
+						},
+						{
+							icon: 'upload',
+							text: '意见反馈'
+						},
+						{
+							icon: 'info',
+							text: '关于优购'
 						}
 					]
 				}
@@ -153,7 +197,15 @@
 <style lang="less" scoped>
 	.user {
 		background-color: #f2f2f2;
+		padding-bottom: 20rpx;
+		/* #ifdef H5 */
+		min-height: calc( 100vh - 120rpx );
+		/* #endif */
+		
+		/* #ifdef APP-PLUS */
+		// min-height: calc( 100vh - 100rpx );
 		min-height: 100vh;
+		/* #endif */
 
 		.info {
 			height: 400rpx;
@@ -217,5 +269,6 @@
 		.login {
 			padding: 200rpx 50rpx 0;
 		}
+	
 	}
 </style>

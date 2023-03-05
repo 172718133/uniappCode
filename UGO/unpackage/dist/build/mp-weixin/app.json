@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/goods_detail/main",
+    "pages/collect/collect",
+    "pages/goods_list/goods_list"
+  ],
+  "subPackages": [],
+  "tabBar": {
+    "selectedColor": "#5cdedb",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "./static/imgs/home.png",
+        "selectedIconPath": "./static/imgs/home-o.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/category/category",
+        "iconPath": "./static/imgs/category.png",
+        "selectedIconPath": "./static/imgs/category-o.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "./static/imgs/cart.png",
+        "selectedIconPath": "./static/imgs/cart-o.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/user/user",
+        "iconPath": "./static/imgs/my.png",
+        "selectedIconPath": "./static/imgs/my-o.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

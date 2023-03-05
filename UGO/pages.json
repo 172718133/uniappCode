@@ -16,7 +16,7 @@
 		{
 			"path": "pages/category/category",
 			"style": {
-				"navigationBarTitleText": "分类"
+				"navigationBarTitleText": "商品分类"
 			}
 		},
 		{
@@ -40,7 +40,7 @@
 		{
 			"path": "pages/collect/collect",
 			"style": {
-				"navigationBarTitleText": "收藏"
+				"navigationBarTitleText": "我的收藏"
 			}
 		},
 		{
@@ -50,6 +50,24 @@
 				"enablePullDownRefresh": true,
 				"onReachBottomDistance": 10
 			}
+		},
+		{
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "我的订单"
+			}
+		},
+		{
+			"path": "pages/address/address",
+			"style": {
+				"navigationBarTitleText": "收货地址"
+			}
+		},
+		{
+			"path": "pages/address/add_address",
+			"style": {
+				"navigationBarTitleText": "添加收货地址"
+			}
 		}
   ],
 	// #ifdef APP-PlUS || MP-WEIXIN
@@ -57,7 +75,7 @@
 		"navigationBarTextStyle": "black",
 		// "navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#eee"
 	},
 	// #endif
 	

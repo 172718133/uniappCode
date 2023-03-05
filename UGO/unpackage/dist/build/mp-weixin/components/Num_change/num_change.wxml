@@ -1,0 +1,1 @@
+<view class="num_change data-v-fc592b20"><view data-event-opts="{{[['tap',[['less',['$event']]]]]}}" class="less data-v-fc592b20" bindtap="__e">-</view><view class="num data-v-fc592b20">{{''+num+''}}</view><view data-event-opts="{{[['tap',[['add',['$event']]]]]}}" class="add data-v-fc592b20" bindtap="__e">+</view></view>

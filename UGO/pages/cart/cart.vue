@@ -10,6 +10,9 @@
 				<uni-popup-dialog cancelText="取消" confirmText="确定" content="确定删除该商品？" @confirm="dialogConfirm" @close="dialogClose"></uni-popup-dialog>
 			</uni-popup>
 		</view>
+		<uni-popup ref="address" type="dialog">
+			<uni-popup-dialog message="成功消息" :duration="2000" title="请选择收货地址" :before-close="true" @close="closeAdd" @confirm="confirmAdd"></uni-popup-dialog>
+		</uni-popup>
 		<Pay :allCheck="allCheck" :totalNum="totalNum" :totalPrice="totalPrice" @payCheckChange="payCheckChange"></Pay>
 	</view>
 </template>
@@ -38,19 +41,21 @@
 		},
 		methods: {
 			chooseAdd(){
-				uni.chooseAddress({
-					success: (res) => {
-						console.log(res);
-					}
-				})
+				this.$refs.address.open()
 			},
-			// 弹窗点击确定按钮
+			// 选择收货地址弹窗点击取消按钮
+			closeAdd () {
+				this.$refs.address.close()
+			},
+			// 选择收货地址弹窗点击确定按钮
+			confirmAdd() {},
+			// 删除商品弹窗点击确定按钮
 			dialogConfirm () {
 				this.cartList.splice(this.obj.index, 1)
 				uni.setStorageSync('carts', this.cartList)
 				this.total(this.cartList)
 			},
-			// 弹窗点击取消按钮
+			// 删除商品弹窗点击取消按钮
 			dialogClose () {
 				this.$refs.alertDialog.close()
 			},
@@ -130,6 +135,8 @@
 		/* #endif */
 		background-color: #f2f2f2;
 		padding-bottom: 110rpx;
-		.chooseAdd {}
+		.chooseAdd {
+			padding: 20rpx 80rpx;
+		}
 	}
 </style>

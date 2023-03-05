@@ -19,7 +19,7 @@
 			
 		},
 		onShow () {
-			this.collectList = uni.getStorageSync('collect')
+			this.collectList = uni.getStorageSync('collect') || []
 		}
 	}
 </script>

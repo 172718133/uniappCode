@@ -9,16 +9,16 @@
 					{{list.title_right}}
 				</view>
 			</view>
-			<view class="content">
-				<view v-for="item in list.context" :key="item.icon">
-					<uni-icons :type="item.icon" size="30" v-if="item.icon"></uni-icons>
+			<view :class="isFlex?'content':'float'">
+				<navigator :url="item.url" v-for="item in list.context" :key="item.icon">
+					<uni-icons :type="item.icon" size="28" v-if="item.icon"></uni-icons>
 					<view class="num" v-else>
 						{{item.num}}
 					</view>
 					<view class="text">
 						{{item.text}}
 					</view>
-				</view>
+				</navigator>
 			</view>
 		</view>
 	</view>
@@ -32,7 +32,11 @@
 			}
 		},
 		props: {
-			list: {}
+			list: {
+				type: Object,
+				default: {}
+			},
+			isFlex: false
 		},
 		methods: {
 
@@ -50,7 +54,7 @@
 		.title {
 			display: flex;
 			justify-content: space-between;
-
+			margin-bottom: 20rpx;
 			.left {
 				font-size: 32rpx;
 				font-weight: 600;
@@ -67,8 +71,25 @@
 			text-align: center;
 			padding-top: 40rpx;
 
-			&>view {
+			&>navigator {
 				flex: 1;
+			}
+			.num {
+				font-size: 34rpx;
+				font-weight: bold;
+			}
+			.text {
+				font-size: 26rpx;
+				margin-top: 10rpx;
+			}
+		}
+		.float {
+			overflow: hidden;
+			&>navigator {
+				float: left;
+				width: 25%;
+				text-align: center;
+				margin-top: 30rpx;
 			}
 			.num {
 				font-size: 34rpx;

@@ -59,7 +59,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "wxa27c679b85981c9d",
         "setting" : {
             "urlCheck" : false
         },
@@ -81,6 +81,15 @@
     "h5" : {
         "router" : {
             "mode" : "hash"
+        },
+        "sdkConfigs" : {
+            "maps" : {
+                "amap" : {
+                    "key" : "4c1df0f3deb721caaef5e3ce6067f07e",
+                    "securityJsCode" : "79d157ca97773a0f241516e56af6d9a7",
+                    "serviceHost" : ""
+                }
+            }
         }
     }
 }
