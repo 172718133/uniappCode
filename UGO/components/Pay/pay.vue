@@ -45,7 +45,17 @@
 			},
 			// 结算按钮点击事件
 			toPay () {
-				console.log('支付');
+				let address = uni.getStorageSync('selectAdd')
+				if (!address) {
+					uni.showToast({
+						title: '请选择收货地址',
+						icon: 'none'
+					})
+				} else {
+					uni.navigateTo({
+						url: '/pages/pay/pay'
+					})
+				}
 			}
 		}
 	}

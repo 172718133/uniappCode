@@ -74,6 +74,12 @@
 			"style": {
 				"navigationBarTitleText": "选择收货地址"
 			}
+		},
+		{
+			"path": "pages/pay/pay",
+			"style": {
+				"navigationBarTitleText": "支付"
+			}
 		}
   ],
 	"globalStyle": {
