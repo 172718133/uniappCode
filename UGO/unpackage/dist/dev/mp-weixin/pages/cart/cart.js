@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uniPopup: function () {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 117))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-popup/components/uni-popup/uni-popup */ "uni_modules/uni-popup/components/uni-popup/uni-popup").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup/uni-popup.vue */ 139))
     },
     uniPopupDialog: function () {
-      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 124))
+      return Promise.all(/*! import() | uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-popup/components/uni-popup-dialog/uni-popup-dialog.vue */ 146))
     },
   }
 } catch (e) {
@@ -185,24 +185,27 @@ var _eventBus = _interopRequireDefault(__webpack_require__(/*! ../../util/eventB
 //
 //
 //
+//
+//
+//
 var GoodsItem = function GoodsItem() {
   __webpack_require__.e(/*! require.ensure | components/Goods_item/goods_item */ "components/Goods_item/goods_item").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Goods_item/goods_item.vue */ 136));
+    return resolve(__webpack_require__(/*! @/components/Goods_item/goods_item.vue */ 158));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var NumChange = function NumChange() {
   __webpack_require__.e(/*! require.ensure | components/Num_change/num_change */ "components/Num_change/num_change").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Num_change/num_change.vue */ 143));
+    return resolve(__webpack_require__(/*! @/components/Num_change/num_change.vue */ 165));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var CartItem = function CartItem() {
   __webpack_require__.e(/*! require.ensure | components/Cart_item/cart_item */ "components/Cart_item/cart_item").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Cart_item/cart_item.vue */ 150));
+    return resolve(__webpack_require__(/*! @/components/Cart_item/cart_item.vue */ 172));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Pay = function Pay() {
   __webpack_require__.e(/*! require.ensure | components/Pay/pay */ "components/Pay/pay").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Pay/pay.vue */ 157));
+    return resolve(__webpack_require__(/*! @/components/Pay/pay.vue */ 179));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -223,19 +226,21 @@ var _default = {
   },
   methods: {
     chooseAdd: function chooseAdd() {
-      uni.chooseAddress({
-        success: function success(res) {
-          console.log(res);
-        }
-      });
+      this.$refs.address.open();
     },
-    // 弹窗点击确定按钮
+    // 选择收货地址弹窗点击取消按钮
+    closeAdd: function closeAdd() {
+      this.$refs.address.close();
+    },
+    // 选择收货地址弹窗点击确定按钮
+    confirmAdd: function confirmAdd() {},
+    // 删除商品弹窗点击确定按钮
     dialogConfirm: function dialogConfirm() {
       this.cartList.splice(this.obj.index, 1);
       uni.setStorageSync('carts', this.cartList);
       this.total(this.cartList);
     },
-    // 弹窗点击取消按钮
+    // 删除商品弹窗点击取消按钮
     dialogClose: function dialogClose() {
       this.$refs.alertDialog.close();
     },

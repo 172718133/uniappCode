@@ -70,14 +70,10 @@
 			}
 		}
   ],
-	// #ifdef APP-PlUS || MP-WEIXIN
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		// "navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#eee"
+		"navigationBarTextStyle": "black"
 	},
-	// #endif
 	
 	// #ifdef H5
 	"globalStyle": {

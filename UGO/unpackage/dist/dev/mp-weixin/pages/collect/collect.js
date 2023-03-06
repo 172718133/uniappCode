@@ -141,7 +141,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var GoodsItem = function GoodsItem() {
   __webpack_require__.e(/*! require.ensure | components/Goods_item/goods_item */ "components/Goods_item/goods_item").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Goods_item/goods_item.vue */ 136));
+    return resolve(__webpack_require__(/*! @/components/Goods_item/goods_item.vue */ 158));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -155,7 +155,7 @@ var _default = {
   },
   methods: {},
   onShow: function onShow() {
-    this.collectList = uni.getStorageSync('collect');
+    this.collectList = uni.getStorageSync('collect') || [];
   }
 };
 exports.default = _default;

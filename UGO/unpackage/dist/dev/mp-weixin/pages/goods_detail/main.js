@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uniIcons: function () {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 109))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 131))
     },
   }
 } catch (e) {
@@ -234,7 +234,7 @@ var _index = __webpack_require__(/*! @/api/index.js */ 42);
 //
 var GoodsBottom = function GoodsBottom() {
   __webpack_require__.e(/*! require.ensure | components/Goods_bottom/goods_bottom */ "components/Goods_bottom/goods_bottom").then((function () {
-    return resolve(__webpack_require__(/*! @/components/Goods_bottom/goods_bottom.vue */ 171));
+    return resolve(__webpack_require__(/*! @/components/Goods_bottom/goods_bottom.vue */ 193));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

@@ -1,0 +1,26 @@
+.add.data-v-651e7052 {
+  padding: 20rpx;
+}
+.add .title.data-v-651e7052 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.add .title .left.data-v-651e7052 {
+  display: flex;
+  align-items: center;
+}
+.add .title .right.data-v-651e7052 {
+  font-weight: bold;
+}
+.add .textaera.data-v-651e7052 {
+  padding: 8rpx 0 0 20rpx;
+}
+.add .input.data-v-651e7052 {
+  margin-top: 2rpx;
+}
+.add button.data-v-651e7052 {
+  margin-top: 50rpx;
+}
+

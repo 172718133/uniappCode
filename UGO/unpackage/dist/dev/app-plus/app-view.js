@@ -150,6 +150,10 @@ if (typeof uni !== 'undefined' && uni && uni.requireGlobal) {
   BigUint64Array = global.BigUint64Array;
 }
 window.__uniConfig = {
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
   "darkmode": false
 };
 if (uni.restoreGlobal) {

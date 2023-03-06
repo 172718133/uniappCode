@@ -7,9 +7,16 @@
     "pages/user/user",
     "pages/goods_detail/main",
     "pages/collect/collect",
-    "pages/goods_list/goods_list"
+    "pages/goods_list/goods_list",
+    "pages/order/order",
+    "pages/address/address",
+    "pages/address/add_address"
   ],
   "subPackages": [],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
   "tabBar": {
     "selectedColor": "#5cdedb",
     "list": [

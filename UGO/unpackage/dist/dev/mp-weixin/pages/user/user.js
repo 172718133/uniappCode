@@ -101,7 +101,7 @@ var components
 try {
   components = {
     uniIcons: function () {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 109))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 131))
     },
   }
 } catch (e) {
@@ -166,7 +166,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var MyItem = function MyItem() {
   __webpack_require__.e(/*! require.ensure | components/My_item/my_item */ "components/My_item/my_item").then((function () {
-    return resolve(__webpack_require__(/*! @/components/My_item/my_item.vue */ 164));
+    return resolve(__webpack_require__(/*! @/components/My_item/my_item.vue */ 186));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -180,19 +180,24 @@ var _default = {
         title_right: '全部﹥',
         context: [{
           icon: 'wallet',
-          text: '待付款'
+          text: '待付款',
+          url: '../../pages/order/order'
         }, {
           icon: 'gift',
-          text: '待发货'
+          text: '待发货',
+          url: '../../pages/order/order'
         }, {
           icon: 'folder-add',
-          text: '待收货'
+          text: '待收货',
+          url: '../../pages/order/order'
         }, {
           icon: 'chatbubble',
-          text: '待评价'
+          text: '待评价',
+          url: '../../pages/order/order'
         }, {
           icon: 'help',
-          text: '退款/售后'
+          text: '退款/售后',
+          url: '../../pages/order/order'
         }]
       },
       list1: {
@@ -210,6 +215,35 @@ var _default = {
         }, {
           num: '3542',
           text: '积分'
+        }]
+      },
+      list2: {
+        title_left: '其他功能',
+        context: [{
+          icon: 'chat',
+          text: '联系客服'
+        }, {
+          icon: 'vip',
+          text: '购买优惠卡'
+        }, {
+          icon: 'location',
+          text: '收货地址',
+          url: '../../pages/address/address'
+        }, {
+          icon: 'email',
+          text: '发票报销'
+        }, {
+          icon: 'compose',
+          text: '常见问题'
+        }, {
+          icon: 'paperplane',
+          text: '到货提醒'
+        }, {
+          icon: 'upload',
+          text: '意见反馈'
+        }, {
+          icon: 'info',
+          text: '关于优购'
         }]
       }
     };

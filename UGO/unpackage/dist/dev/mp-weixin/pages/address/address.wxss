@@ -1,0 +1,44 @@
+.address.data-v-db675620 {
+  padding: 20rpx;
+}
+.address .title.data-v-db675620 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.address .title .left.data-v-db675620 {
+  display: flex;
+  align-items: center;
+}
+.address .title .right.data-v-db675620 {
+  font-weight: bold;
+}
+.address .address_list .address_item.data-v-db675620 {
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  border-bottom: 1rpx solid #e1e1e1;
+}
+.address .address_list .address_item .address_info.data-v-db675620 {
+  flex: 7;
+  padding-left: 30rpx;
+  padding-right: 10rpx;
+}
+.address .address_list .address_item .address_info .info_title.data-v-db675620 {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.address .address_list .address_item .address_info .info.data-v-db675620 {
+  display: flex;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+.address .address_list .address_item .address_info .info .name.data-v-db675620 {
+  margin-right: 20rpx;
+}
+.address .address_list .address_item .compose.data-v-db675620 {
+  flex: 1;
+}
+

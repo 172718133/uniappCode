@@ -1,6 +1,6 @@
 .user.data-v-80842834 {
   background-color: #f2f2f2;
-  min-height: 100vh;
+  padding-bottom: 20rpx;
 }
 .user .info.data-v-80842834 {
   height: 400rpx;
