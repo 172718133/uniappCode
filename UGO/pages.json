@@ -68,6 +68,12 @@
 			"style": {
 				"navigationBarTitleText": "添加收货地址"
 			}
+		},
+		{
+			"path": "pages/address/choose_address",
+			"style": {
+				"navigationBarTitleText": "选择收货地址"
+			}
 		}
   ],
 	"globalStyle": {

@@ -1,7 +1,24 @@
 <template>
 	<view class="cart">
 		<view class="chooseAdd">
-			<button type="default" @click="chooseAdd">选择收货地址</button>
+			<view class="selectAdd" @click="chooseAdd" v-if="selectAdd.length !== 0">
+				<view class="address_item">
+					<view class="address_info">
+						<view class="info_title">
+							{{selectAdd.address}}
+						</view>
+						<view class="info">
+							<view class="name">
+								{{selectAdd.name}}
+							</view>
+							<view class="phone">
+								{{selectAdd.phone}}
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<button type="default" @click="chooseAdd" v-else>选择收货地址</button>
 		</view>
 		<CartItem :cartList="cartList" @itemCheckChange="itemCheckChange"></CartItem>
 		<view>
@@ -10,9 +27,6 @@
 				<uni-popup-dialog cancelText="取消" confirmText="确定" content="确定删除该商品？" @confirm="dialogConfirm" @close="dialogClose"></uni-popup-dialog>
 			</uni-popup>
 		</view>
-		<uni-popup ref="address" type="dialog">
-			<uni-popup-dialog :duration="2000" title="请选择收货地址" :before-close="true" @close="closeAdd" @confirm="confirmAdd"></uni-popup-dialog>
-		</uni-popup>
 		<Pay :allCheck="allCheck" :totalNum="totalNum" :totalPrice="totalPrice" @payCheckChange="payCheckChange"></Pay>
 	</view>
 </template>
@@ -30,7 +44,8 @@
 				allCheck: false,
 				totalPrice: 0,
 				totalNum: 100,
-				obj: {}
+				obj: {},
+				selectAdd: {}
 			}
 		},
 		components: {
@@ -41,14 +56,10 @@
 		},
 		methods: {
 			chooseAdd(){
-				this.$refs.address.open()
+				uni.navigateTo({
+					url: '/pages/address/choose_address'
+				})
 			},
-			// 选择收货地址弹窗点击取消按钮
-			closeAdd () {
-				this.$refs.address.close()
-			},
-			// 选择收货地址弹窗点击确定按钮
-			confirmAdd() {},
 			// 删除商品弹窗点击确定按钮
 			dialogConfirm () {
 				this.cartList.splice(this.obj.index, 1)
@@ -99,6 +110,8 @@
 		},
 		onShow() {
 			this.cartList = uni.getStorageSync('carts') || []
+			this.selectAdd = uni.getStorageSync('selectAdd') || []
+			console.log(this.selectAdd);
 			this.total(this.cartList)
 			this.allChecked()
 		},
@@ -136,7 +149,35 @@
 		background-color: #f2f2f2;
 		padding-bottom: 110rpx;
 		.chooseAdd {
-			padding: 20rpx 80rpx;
+			padding: 20rpx 40rpx;
+			.address_item {
+				display: flex;
+				padding: 20rpx;
+				align-items: center;
+				border-bottom: 1rpx solid #e1e1e1;
+				.address_info {
+					flex: 7;
+					// padding-left: 30rpx;
+					// padding-right: 10rpx;
+					.info_title {
+						font-size: 30rpx;
+						font-weight: bold;
+					}
+					.info {
+						display: flex;
+						margin-top: 20rpx;
+						font-size: 24rpx;
+						color: #999;
+						.name {
+							margin-right: 20rpx;
+						}
+						.phone {}
+					}
+				}
+				.compose {
+					flex: 1;
+				}
+			}
 		}
 	}
 </style>
