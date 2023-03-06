@@ -11,7 +11,7 @@
 			</uni-popup>
 		</view>
 		<uni-popup ref="address" type="dialog">
-			<uni-popup-dialog message="成功消息" :duration="2000" title="请选择收货地址" :before-close="true" @close="closeAdd" @confirm="confirmAdd"></uni-popup-dialog>
+			<uni-popup-dialog :duration="2000" title="请选择收货地址" :before-close="true" @close="closeAdd" @confirm="confirmAdd"></uni-popup-dialog>
 		</uni-popup>
 		<Pay :allCheck="allCheck" :totalNum="totalNum" :totalPrice="totalPrice" @payCheckChange="payCheckChange"></Pay>
 	</view>
