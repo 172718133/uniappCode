@@ -1,7 +1,7 @@
 <template>
 	<view class="add_item">
-		<view class="address_item" v-for="(item, index) in addressList" :key="index" @click="addClick(index)">
-			<view class="address_info">
+		<view class="address_item" v-for="(item, index) in addressList" :key="index">
+			<view class="address_info" @click="addClick(index)">
 				<view class="info_title">
 					{{item.address}}
 				</view>
@@ -76,7 +76,11 @@
 			}
 		}
 		.compose {
+			height: 40px;
 			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 	}
 </style>
