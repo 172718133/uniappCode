@@ -6,10 +6,14 @@
 				我的地址
 			</view>
 		</view>
-		<view class="address_list">
+		<view class="none" v-if="addressList.length == 0">
+			请先添加收货地址哦~
+		</view>
+		<view class="address_list" v-else>
 			<AddressItem :addressList="addressList" @addClick="chooseAdd"></AddressItem>
 		</view>
 	</view>
+	
 </template>
 
 <script>
@@ -50,5 +54,11 @@
 				align-items: center;
 			}
 		}		
+	}
+	.none {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 200px;
 	}
 </style>

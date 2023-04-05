@@ -135,6 +135,7 @@
 				let addlist = uni.getStorageSync('addressList') || []
 				addlist.splice(this.editIndex, 1)
 				uni.setStorageSync('addressList', addlist)
+				uni.removeStorageSync('selectAdd')
 				uni.showToast({
 					title: '删除成功',
 					icon: 'none',
